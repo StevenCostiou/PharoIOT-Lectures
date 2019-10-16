@@ -1,0 +1,15 @@
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Plan}
+    \small\tableofcontents[currentsection,subsectionstyle=hide/hide/hide]
+  \end{frame}
+}
+
+\AtBeginSubsection[] % Do nothing for \subsection* 
+{ 
+\begin{frame}<beamer> 
+\frametitle{Plan}
+\small\tableofcontents[currentsection,currentsubsection,subsectionstyle=show/shaded/hide] 
+\end{frame} 
+}
