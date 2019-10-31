@@ -801,25 +801,133 @@ rebootSensor
 \end{block}
 }
 
+\frame{\frametitle{A practical introduction with Pharo and PharoThings}
+\begin{block}{Schedule 2h00 - 6h00}
+\begin{itemize}
+		\item (2h00 - 2h30) I2C protocol/connecting Rasps
+		\item (2h30 - 3h00) Hands on BME280
+		\item (3h00 - 3h40) Hands on LCD
+		\item (3h40 - 4h00) Pause
+		\item (4h00 - 5h00) Mini weather station cloud
+		\item (5h00 - 6h00) Building a Webserver on Raspberry
+\end{itemize}
+
+%	\begin{center}
+%	\includegraphics[scale=0.25]{../images/remote-browser}
+%	\end{center}	
+
+\end{block}
+
+}
+
 \frame{\frametitle{I2C Sensors}
+\begin{block}{How I2C works?}
+\begin{itemize}
+		\item Use 2 wires SDA (serial data) and SCL (serial clock)
+		\item Each device has set an ID or a unique address
+		\item 112 devices using 7-bit addressing
+		\item 1008 devices using 10-bit addressing		
+\end{itemize}
+
+%	\begin{center}
+%	\includegraphics[scale=0.25]{../images/remote-browser}
+%	\end{center}	
+
+\end{block}
+
+}
+
+\frame{\frametitle{I2C Sensors}
+\begin{block}{How I2C works?}
+\begin{itemize}
+		\item Use 2 wires SDA (serial data) and SCL (serial clock)
+		\item Each device has set an ID or a unique address
+		\item 112 devices using 7-bit addressing
+		\item 1008 devices using 10-bit addressing		
+\end{itemize}
+
+	\begin{center}
+	\includegraphics[scale=0.45]{../images/pharothings-i2c-bus.jpg}
+	\end{center}	
+
+\end{block}
+
+}
+
+\frame{\frametitle{I2C Sensors}
+\begin{block}{I2C and GPIO based devices}
+\begin{itemize}
+		\item PotLCDHD44780 class
+		\item Written to work with both models	
+\end{itemize}
+
+	\begin{center}
+	\includegraphics[scale=0.45]{../images/i2c-lcd-class.png}
+	\end{center}	
+
+\end{block}
+
+}
+
+\frame{\frametitle{I2C Sensors}
+\begin{block}{BME280 sensor}
+\begin{itemize}
+		\item PotBME280Device class
+\end{itemize}
+
+	\begin{center}
+	\includegraphics[scale=0.85]{../images/pharothings-sensors-board.png}
+	\end{center}	
+
+\end{block}
 
 }
 
 \frame{\frametitle{LCD screen}
+\begin{block}{LCD 1602}
+\begin{itemize}
+		\item PotLCD1602Device class to GPIO device
+		\item PotLCD1602DeviceI2C class to I2C device
+\end{itemize}
 
+	\begin{center}
+	\includegraphics[scale=0.45]{../images/pharothings-lcd-board.png}
+	\end{center}	
+
+\end{block}
+}
+
+\frame{\frametitle{LCD screen}
+\begin{block}{Write an IOT application using an LCD and an BME280 sensor}
+
+			\begin{enumerate}
+				\item Shows the data of sensor on the LCD each 1 second
+			\end{enumerate}
+\end{block}
 }
 
 \frame{\frametitle{Mini wheather station}
+\begin{block}{Chapter 12 of Bookletr}
 
+			\begin{enumerate}
+				\item Create an account on Thingspeak
+				\item Create the class to show the sensor data on LCD
+				\item Create the class to send data to cloud
+			\end{enumerate}
+\end{block}
 }
 
 \frame{\frametitle{Web server}
+\begin{block}{Chapter 13 of Bookletr}
 
+			\begin{enumerate}
+				\item Create the html page and start the webserver
+				\item Create the methods to show the data on the web page
+				\item Exercises, connect the sensor and LED to the web page
+			\end{enumerate}
+\end{block}
 }
 
-\frame{\frametitle{3D gyro sensor}
-
-}
 
 \end{document}
 

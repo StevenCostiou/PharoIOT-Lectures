@@ -1,0 +1,7 @@
+\beamer@sectionintoc {1}{About this course}{3}{0}{1}
+\beamer@sectionintoc {2}{IOT: some generalities}{7}{0}{2}
+\beamer@sectionintoc {3}{Sensors and actuators}{10}{0}{3}
+\beamer@sectionintoc {4}{The Raspberry-pi computer}{17}{0}{4}
+\beamer@sectionintoc {5}{IOT with PharoThings}{21}{0}{5}
+\beamer@sectionintoc {6}{PharoThings in practice}{26}{0}{6}
+\beamer@sectionintoc {7}{PharoThings exercises!}{39}{0}{7}
