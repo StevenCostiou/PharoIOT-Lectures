@@ -467,8 +467,7 @@ remoteBoard := remotePharo evaluate: [ RpiBoard3B current].
 \end{itemize}
 
 \begin{lstlisting}
-	pin := PotGPIO id: 7.
-	pin board: board.
+	pin := board pinWithId: 7.
 \end{lstlisting}	
 
 \begin{itemize}
@@ -599,33 +598,45 @@ remoteBoard := remotePharo evaluate: [ RpiBoard3B current].
 
 \frame[containsverbatim]{\frametitle{Model your own LED blinker}
 
-\begin{block}{Follow and adapt code from tutorial chapter 4}
-	\begin{columns}
-		\begin{column}{0.48\textwidth}
+\begin{block}{The Device App model}
+			\begin{itemize}
+				\item The \texttt{PotAppDevice} class is a general model to implement devices that requires frequent updates\\
+				\item Those devices have their own process\\
+				\item Implemented by the \texttt{Blinker} class\\
+				
+				\begin{itemize}										
+					\item Subclass the \texttt{PotAppDevice} class to implement your own device\\
+					\item Implement the \texttt{loopBody} method: this is the behavior that will be executed after each delay\\		
+					\item Control the process using \texttt{delay:}\\	
+				\end{itemize}
+		\end{itemize}
+		
+\end{block}
+}
+
+\frame[containsverbatim]{\frametitle{Model your own LED blinker}
+
+\begin{block}{Implement the LED blinker as a Pharo-IOT app device!}
+	
 			\begin{itemize}
 				\item We want a blinker object, that we can control!				
 \end{itemize}
 
 			\begin{enumerate}
 
-				\item Create a \texttt{Blinker} class in the remote browser
-				\item The class must have a \texttt{process} instance variable
-				\item The class must have a \texttt{delay} instance variable
-				\item The class must have a \texttt{led} instance variable
+				\item Create a \texttt{Blinker} class, subclass of \texttt{PotAppDevice} 
 				\item Create an \texttt{initialize} method to set the initial state of the blinker
 				\item You must be able to start and stop the blinking 
 \end{enumerate}
-		\end{column}
-	\begin{column}{0.6\textwidth}
-	\begin{lstlisting}
+	
+\begin{lstlisting}
 |blinker|
 blinker := Blinker new.
 blinker delay: 1 second.
 blinker start. "start the blinker"
 blinker stop. "stop the blinker"
 \end{lstlisting}	
-	\end{column}
-	\end{columns}
+
 \end{block}
 }
 
